@@ -4,14 +4,14 @@ Spyder Editor
 
 This is a temporary script file.
 """
-
+#パーレー法×マーチンゲール法を組み合わせ シュミレーション
 #https://vegas-online.jp/paray-martin/
 
 import random
-Pare = [1,2,4,8,16,32,64,128,256,512,1024,2048]   #Pare Main
 S = 0      #現在のパーレーステージ 0 から
-Deme = list(range(0))    #Deme list history
-R = random.randint(0,1)   #出目 0 or 1
+Pare = [2**]
+Deme = list(range(0))    #Deme 記録用 list
+R = random.randint(0,2)   #出目 0 or 1 or 2 　 配当3倍以上のに使う為
 W = 0      #Win
 L = 0      #Lose
 N = range(1000)    #Number of maximum try
@@ -26,8 +26,8 @@ P = 0      #収支計算用
 #シュミレーション
 for H in N:
     R = random.randint(0,1)
-    Deme.append(R)   #Deme history
-    print("ベッド数",Pare[S])    
+    Deme.append(R)   #Deme 記録に追加
+    print("ベッド数",Pare[S])
     if R==1:    #Win case
         P=Pare[S]*Lever*B   #収支計算
         W=W+1   #勝ち数+１
